@@ -9,13 +9,15 @@
 
 	<title>Orienteering project</title>
 
-	<style>
-		@import 'ui/css/evothings-app.css';
-	</style>
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 
 	<script>
 	// Redirect console.log to Evothings Workbench.
-	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+		if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
 	<script src="app.js"></script>
 	<script src="cordova.js"></script>
@@ -33,10 +35,9 @@
 			
 		
 		<ons-tabbar swipeable position="auto" visible="true">
-			<ons-tab page="about.html" label="About" icon="ion-home, material:md-home" active></ons-tab>
-			<ons-tab page="feet.html" label="Feet" icon="ion-ios-body" active-icon="ion-ios-body"></ons-tab>
-			<ons-tab page="shoulders.html" label="Shoulders" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
-			<ons-tab page="face.html" label="Face" icon="md-face" active-icon="md-face"></ons-tab>
+			<ons-tab page="map.html" label="Map" icon="ion-home, material:md-home" active></ons-tab>
+			<ons-tab page="controls.html" label="Controls" icon="ion-ios-body" active-icon="ion-ios-body"></ons-tab>
+			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
 		</ons-tabbar>
 	</ons-page>
 	
@@ -51,30 +52,26 @@
 	 	</ons-dialog>
 	</template>
 			
-	<template id="about.html">
+	<template id="map.html">
 	 	<ons-page id="about">
-			<p>This is an app. We created it.</p>
-			<p>Matilda Carlson and Henrik Johansson</p>
+			<p>Content</p>
 		</ons-page>
 	</template>
 	
-	<template id="feet.html">
+	<template id="controls.html">
 		<ons-page id="feet">
-			<img class="my-header-image" src="photos/photo-feet.jpg" />
-			<center><ons-switch></ons-switch></center>
+			<p>Content</p>
 		</ons-page>
 	</template>
-	<template id="shoulders.html">
+	<template id="activity.html">
 		<ons-page id="shoulders">
-			<img class="my-header-image" src="photos/photo-shoulders-1.jpg" />
-			<center><ons-switch></ons-switch></center>
+			<p>Content</p>
 		</ons-page>
 	</template>
 	
 	<template id="face.html">
 		<ons-page id="face">
-			<img class="my-header-image" src="photos/photo-face.jpg" />
-			<center><ons-switch></ons-switch></center>
+			<p>Content</p>
 		</ons-page>
 	</template>
 
