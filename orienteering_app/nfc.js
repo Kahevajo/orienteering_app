@@ -3,6 +3,7 @@ app.ready = false;
 
 
 app.init = function() {
+    nfc.beginSession();
     document.addEventListener(
         'deviceready',
         app.onReady,
