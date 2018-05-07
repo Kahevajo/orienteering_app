@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no,
 		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-	<title>Basic Template App</title>
+	<title>Orienteering project</title>
 
 	<style>
 		@import 'ui/css/evothings-app.css';
@@ -17,29 +17,66 @@
 	// Redirect console.log to Evothings Workbench.
 	if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
+	<script src="app.js"></script>
+	<script src="cordova.js"></script>
+	<script src="nfc.js"></script>
+
 
 </head>
 
-<body ontouchstart=""><!-- ontouchstart="" enables low-delay CSS transitions. -->
-
-	<header>
-		<button class="back" onclick="history.back()">
-			<img src="ui/images/arrow-left.svg" />
-		</button>
-
-		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
-
-		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
-	</header>
-
-	<h1>TODO: Add app title</h1>
-
-	<p>This is a basic template for an Evothings app.</p>
-
-	<script src="cordova.js"></script>
-	<script src="libs/evothings/evothings.js"></script>
-	<script src="libs/evothings/ui/ui.js"></script>
-	<!-- TODO: Add libraries that you need -->
+<body>
+	<ons-page id="tabbar-page">
+		<ons-toolbar class="topbar">
+			<div class="center">About</div>
+			<div class="right"><ons-toolbar-button onClick="showTemplateDialog()">Button</ons-toolbar-button></div>
+		</ons-toolbar>
+			
+		
+		<ons-tabbar swipeable position="auto" visible="true">
+			<ons-tab page="about.html" label="About" icon="ion-home, material:md-home" active></ons-tab>
+			<ons-tab page="feet.html" label="Feet" icon="ion-ios-body" active-icon="ion-ios-body"></ons-tab>
+			<ons-tab page="shoulders.html" label="Shoulders" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
+			<ons-tab page="face.html" label="Face" icon="md-face" active-icon="md-face"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
+	
+	<template id="dialog.html">
+	  	<ons-dialog id="my-dialog">
+			<div style="text-align: center; padding: 10px;">
+				<p>	This is a simple dialog!</p>
+				<p>
+					<ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+				</p>
+			</div>
+	 	</ons-dialog>
+	</template>
+			
+	<template id="about.html">
+	 	<ons-page id="about">
+			<p>This is an app. We created it.</p>
+			<p>Matilda Carlson and Henrik Johansson</p>
+		</ons-page>
+	</template>
+	
+	<template id="feet.html">
+		<ons-page id="feet">
+			<img class="my-header-image" src="photos/photo-feet.jpg" />
+			<center><ons-switch></ons-switch></center>
+		</ons-page>
+	</template>
+	<template id="shoulders.html">
+		<ons-page id="shoulders">
+			<img class="my-header-image" src="photos/photo-shoulders-1.jpg" />
+			<center><ons-switch></ons-switch></center>
+		</ons-page>
+	</template>
+	
+	<template id="face.html">
+		<ons-page id="face">
+			<img class="my-header-image" src="photos/photo-face.jpg" />
+			<center><ons-switch></ons-switch></center>
+		</ons-page>
+	</template>
 
 </body>
 
