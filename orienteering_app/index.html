@@ -7,39 +7,49 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no,
 		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-	<title>Basic Template App</title>
+	<title>Orienteering project</title>
 
-	<style>
-		@import 'ui/css/evothings-app.css';
-	</style>
-
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+	<script src="app.js"></script>
+	<script src="cordova.js"></script>
+	<script src="nfc.js"></script>
 	<script>
 	// Redirect console.log to Evothings Workbench.
-	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+		if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
+
 
 </head>
 
-<body ontouchstart=""><!-- ontouchstart="" enables low-delay CSS transitions. -->
-
-	<header>
-		<button class="back" onclick="history.back()">
-			<img src="ui/images/arrow-left.svg" />
-		</button>
-
-		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
-
-		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
-	</header>
-
-	<h1>TODO: Add app title</h1>
-
-	<p>This is a basic template for an Evothings app.</p>
-
-	<script src="cordova.js"></script>
-	<script src="libs/evothings/evothings.js"></script>
-	<script src="libs/evothings/ui/ui.js"></script>
-	<!-- TODO: Add libraries that you need -->
+<body>
+	<ons-page id="tabbar-page">
+		<ons-toolbar class="topbar">
+			<div class="center">About</div>
+			<div class="right"><ons-toolbar-button onClick="showTemplateDialog()">Button</ons-toolbar-button></div>
+		</ons-toolbar>
+			
+		
+		<ons-tabbar swipeable position="auto" visible="true">
+			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
+			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
+			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
+		</ons-tabbar>
+	</ons-page>
+	
+	<template id="dialog.html">
+	  	<ons-dialog id="my-dialog">
+			<div style="text-align: center; padding: 10px;">
+				<p>	This is a simple dialog!</p>
+				<p>
+					<ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+				</p>
+			</div>
+	 	</ons-dialog>
+	</template>
 
 </body>
 
