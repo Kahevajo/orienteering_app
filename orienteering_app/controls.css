@@ -1,0 +1,14 @@
+#stamps{
+padding: 5vw;
+text-align: center;
+}
+
+.stamp{
+text-align: center;
+margin: 2vw;
+display: inline-block;
+background: #F0c900;
+margin-bottom: 5vw;
+width: 40vw;
+height: 40vw;
+}
