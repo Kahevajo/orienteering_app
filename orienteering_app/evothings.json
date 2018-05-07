@@ -1,0 +1,20 @@
+{
+  "name": "orienteering_app",
+  "version": "1.0.0",
+  "title": "Orienteering",
+  "description": "An app for exercising orienteering.",
+  "tags": [],
+  "libraries": [
+    {
+      "name": "jquery",
+      "version": "2.1.1"
+    }
+  ],
+  "plugins": [],
+  "index-file": "index.html",
+  "uuid": "32531b03-b583-4b33-9316-ccf253fa3e46",
+  "icon": "app-icon.png",
+  "doc-url": "http://evothings.com/2.2/doc/examples/template-basic-app.html",
+  "long-description": "A basic template for a simple Evothings app.",
+  "cordova-id": "com.evothings.examples.templatebasicapp"
+}
