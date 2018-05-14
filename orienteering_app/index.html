@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="controls.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+	<script src="stopwatch.js"></script>
 	<script src="app.js"></script>
 	<script src="cordova.js"></script>
 	<script src="nfc.js"></script>
@@ -29,7 +30,9 @@
 	<ons-page id="tabbar-page">
 		<ons-toolbar class="topbar">
 			<div class="center">About</div>
-			<div class="right"><ons-toolbar-button onClick="showTemplateDialog()">Button</ons-toolbar-button></div>
+			<div class="right">
+				<ons-toolbar-button onClick="showTemplateDialog()">Timer</ons-toolbar-button>
+			</div>
 		</ons-toolbar>
 			
 		
@@ -43,9 +46,11 @@
 	<template id="dialog.html">
 	  	<ons-dialog id="my-dialog">
 			<div style="text-align: center; padding: 10px;">
-				<p>	This is a simple dialog!</p>
-				<p>
-					<ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+				<h1><time>00:00:00</time></h1>
+				<button id="start">Start</button>
+				<button id="stop">Stop</button>
+				<button id="clear">Clear</button><br/>
+				<ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
 				</p>
 			</div>
 	 	</ons-dialog>
