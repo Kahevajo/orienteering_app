@@ -14,10 +14,10 @@
 	<link rel="stylesheet" href="controls.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<script src="stopwatch.js"></script>
 	<script src="app.js"></script>
 	<script src="cordova.js"></script>
 	<script src="nfc.js"></script>
+	<script src="stopwatch.js"></script>
 	<script>
 	// Redirect console.log to Evothings Workbench.
 		if (window.hyper && window.hyper.log) { console.log = hyper.log }
@@ -46,11 +46,11 @@
 	<template id="dialog.html">
 	  	<ons-dialog id="my-dialog">
 			<div style="text-align: center; padding: 10px;">
-				<h1><time>00:00:00</time></h1>
-				<button id="start">Start</button>
-				<button id="stop">Stop</button>
-				<button id="clear">Clear</button><br/>
-				<ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+				<h1><time id="time">00:00:00</time></h1>
+				<button onClick="start()">Start</button>
+				<button onClick="stop()">Stop</button>
+				<button onClick="clear()">Clear</button><br/>
+				<ons-button onClick="hideDialog('my-dialog')">Close</ons-button>
 				</p>
 			</div>
 	 	</ons-dialog>
