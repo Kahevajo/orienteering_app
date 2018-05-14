@@ -5,10 +5,15 @@ text-align: center;
 
 .stamp{
 text-align: center;
+vertical-align: top;
 margin: 2vw;
 display: inline-block;
 background: #F0c900;
 margin-bottom: 5vw;
 width: 40vw;
-height: 40vw;
+height: 50vw;
+}
+
+img {
+    width: 100%;
 }
