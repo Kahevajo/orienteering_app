@@ -8,6 +8,7 @@ var courseone = [
 ['Five', 59.357312, 18.076309],
 ['Six', 59.355846, 18.075837]
 ];
+var centerone = {lat:59.359107, lng:18.069356};
 
 var coursetwo = [
 ['Seven', 59.363150, 18.082661],
@@ -17,6 +18,7 @@ var coursetwo = [
 ['Eleven', 59.362709, 18.095149],
 ['Twelve', 59.360674, 18.091158]
 ];
+var centertwo = {lat:59.366450, lng:18.084249};
 
 var coursethree = [
 ['Thirteen', 59.326099, 18.068928],
@@ -26,6 +28,7 @@ var coursethree = [
 ['Seventeen', 59.324825, 18.072103],
 ['Eightteen', 59.324058, 18.075837]
 ];
+var centerthree = {lat: 59.324825, lng:18.072103};
 
 
 function initMap() {
@@ -43,6 +46,8 @@ function initMap() {
 }
 
 function dropCourseone() {
+	map.setCenter(centerone);
+	map.setZoom(14);
 	var marker, i;
 	for (i = 0; i < courseone.length; i++) {  
       marker = new google.maps.Marker({
@@ -51,9 +56,12 @@ function dropCourseone() {
         animation: google.maps.Animation.DROP
       });
 	}
+	document.getElementById("chooseCourse").style.display = "None";
 }
 
 function dropCoursetwo() {
+	map.setCenter(centertwo);
+	map.setZoom(14);
 	var marker, i;
 	for (i = 0; i < coursetwo.length; i++) {  
       marker = new google.maps.Marker({
@@ -62,9 +70,12 @@ function dropCoursetwo() {
         animation: google.maps.Animation.DROP
       });
 	}
+	document.getElementById("chooseCourse").style.display = "None";
 }
 
 function dropCoursethree() {
+	map.setCenter(centerthree);
+	map.setZoom(14);
 	var marker, i;
 	for (i = 0; i < coursethree.length; i++) {  
       marker = new google.maps.Marker({
@@ -73,4 +84,5 @@ function dropCoursethree() {
         animation: google.maps.Animation.DROP
       });
 	}
+	document.getElementById("chooseCourse").style.display = "None";
 }
