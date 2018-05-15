@@ -20,8 +20,8 @@
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="nfc.js"></script>
 	<script type="text/javascript" src="stopwatch.js"></script>
-	<script type="text/javascript" src="map.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+	<script type="text/javascript" src="map.js"></script>
 	
 	<script>
 		// Redirect console.log to Evothings Workbench.
@@ -62,4 +62,13 @@
 </template>
 
 </body>
+
+<script>
+	ons.ready(function () {
+		initMap();
+	});
+	document.addEventListener('show', function (event) {
+		initMap();
+	});
+</script>
 </html>

@@ -50,5 +50,3 @@ function dropCourseone() {
       });
 	}
 }
-
-$timeout(initMap(),100);
