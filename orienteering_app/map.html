@@ -1,9 +1,12 @@
-<ons-page>
+<ons-page id="mapContainer">
     <p>Map</p>
     <div id="map"></div>
-    <ons-button style="width:100%" id="drop" onClick="dropCourseone()">course one</ons-button>
-<script src="map.js"></script>
-<script 
-    src="https://maps.googleapis.com/maps/api/js?callback=initMap"async defer>
+    <script>
+        ons.ready(function () {
+            document.addEventListener('init', function (event) {
+                initMap();
+            });
+        });
     </script>
+    <ons-button style="width:100%" id="drop" onClick="dropCourseone()">course one</ons-button>
 </ons-page>

@@ -26,15 +26,21 @@ var courseone = [
 // 	6: {lat:59.324058, lng:18.075837}
 // }
 
-function initMap(){
-			// Map options
-			map = new google.maps.Map(document.getElementById('map'),  {
-				zoom:14,
-				center:{lat: 59.3498092, lng:18.0684758}
-			});
-		}
+function initMap() {
+	// Map options
+	console.log("init")
+	try {
+		map = new google.maps.Map(document.getElementById("map"),  {
+			zoom:14,
+			center:{lat: 59.3498092, lng:18.0684758}
+		});
+	} catch (error) {
+		console.log(error)
+	}
+	console.log("init done")
+}
 
-function dropCourseone(){
+function dropCourseone() {
 	var marker, i;
 	for (i = 0; i < courseone.length; i++) {  
       marker = new google.maps.Marker({
@@ -43,5 +49,6 @@ function dropCourseone(){
         animation: google.maps.Animation.DROP
       });
 	}
-
 }
+
+$timeout(initMap(),100);

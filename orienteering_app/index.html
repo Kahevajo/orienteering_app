@@ -12,18 +12,22 @@
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<link rel="stylesheet" href="controls.css">
+	<link rel="stylesheet" href="map.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<script src="app.js"></script>
-	<script src="cordova.js"></script>
-	<script src="nfc.js"></script>
-	<script src="stopwatch.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="nfc.js"></script>
+	<script type="text/javascript" src="stopwatch.js"></script>
+	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+	
 	<script>
-	// Redirect console.log to Evothings Workbench.
+		// Redirect console.log to Evothings Workbench.
 		if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
-
-
+	
+	
 </head>
 
 <body>
@@ -34,7 +38,7 @@
 				<ons-toolbar-button onClick="showTemplateDialog()">Timer</ons-toolbar-button>
 			</div>
 		</ons-toolbar>
-			
+		
 		
 		<ons-tabbar swipeable position="auto" visible="true">
 			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
@@ -44,18 +48,17 @@
 	</ons-page>
 	
 	<template id="dialog.html">
-	  	<ons-dialog id="my-dialog">
+		<ons-dialog id="my-dialog">
 			<div style="text-align: center; padding: 10px;">
 				<h1><time id="time">00:00:00</time></h1>
 				<button onClick="start()">Start</button>
 				<button onClick="stop()">Stop</button>
 				<button onClick="resetWatch()">Clear</button><br/>
 				<ons-button onClick="hideDialog('my-dialog')">Close</ons-button>
-				</p>
-			</div>
-	 	</ons-dialog>
-	</template>
+			</p>
+		</div>
+	</ons-dialog>
+</template>
 
 </body>
-
 </html>
