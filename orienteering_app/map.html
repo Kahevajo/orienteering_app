@@ -1,8 +1,14 @@
 <ons-page id="mapContainer">
+    <div id="stopwatchContainer">
+        <h1><time id="time">00:00:00</time></h1>
+        <button onClick="start()">Start</button>
+        <button onClick="stop()">Stop</button>
+        <button onClick="resetWatch()">Clear</button><br/>
+    </div>
     <div id="map"></div>
-    <div id="chooseCourse">
-        <ons-button style="width:100%" id="drop" onClick="dropCoursetwo()">course two</ons-button>
-        <ons-button style="width:100%" id="drop" onClick="dropCourseone()">course one</ons-button>
-        <ons-button style="width:100%" id="drop" onClick="dropCoursethree()">course three</ons-button>
+    <div id="chooseCourseContainer">
+        <ons-button class="courseButton" onClick="dropCourseone()">Course One</ons-button>
+        <ons-button class="courseButton" onClick="dropCoursetwo()">Course two</ons-button>
+        <ons-button class="courseButton" onClick="dropCoursethree()">Course three</ons-button>
     </div>
 </ons-page>
