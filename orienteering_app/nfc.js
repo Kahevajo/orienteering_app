@@ -24,17 +24,53 @@ callback = function(nfcEvent) {
     switch (control) {
         case "c1":
             var container = document.getElementById("c1");
-            var img = document.createElement("img");
-            img.src="pictures/stamp1.png";
-            container.appendChild(img);
+            if (container.childNodes.length <= 1) {
+                var img = document.createElement("img");
+                img.src="pictures/stamp1.png";
+                container.appendChild(img);
+                navigator.notification.beep(1);
+            }
             break;
         case "c2":
             var container = document.getElementById("c2");
-            var img = document.createElement("img");
-            img.src = "pictures/stamp2.png";
-            container.appendChild(img);
+            if (container.childNodes.length <= 1) {
+                var img = document.createElement("img");
+                img.src = "pictures/stamp2.png";
+                container.appendChild(img);
+            }
             break;
-
+        case "c3":
+            var container = document.getElementById("c3");
+            if (container.childNodes.length <= 1) {
+                var img = document.createElement("img");
+                img.src = "pictures/stamp2.png";
+                container.appendChild(img);
+            }
+            break;
+        case "c4":
+            var container = document.getElementById("c4");
+            if (container.childNodes.length <= 1) {
+                var img = document.createElement("img");
+                img.src = "pictures/stamp2.png";
+                container.appendChild(img);
+            }
+            break;
+        case "c5":
+            var container = document.getElementById("c5");
+            if (container.childNodes.length <= 1) {
+                var img = document.createElement("img");
+                img.src = "pictures/stamp2.png";
+                container.appendChild(img);
+            }
+            break;
+        case "c6":
+            var container = document.getElementById("c6");
+            if (container.childNodes.length <= 1) {
+                var img = document.createElement("img");
+                img.src = "pictures/stamp2.png";
+                container.appendChild(img);
+            }
+            break;
         default:
             hyper.log("could not find control in dictionary");
             break;
