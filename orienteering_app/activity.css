@@ -1,0 +1,17 @@
+.course{
+border-bottom: 1px solid #000;
+padding: 10px;
+font-size: 20px;
+}
+
+.courseNumber{
+display: inline-block;
+width: 50%;
+}
+
+.courseTime{
+float: left;
+text-align: right;
+float: right;
+display: inline-block;
+}
