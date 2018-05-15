@@ -51,7 +51,6 @@ function dropCourseone() {
         animation: google.maps.Animation.DROP
       });
 	}
-<<<<<<< HEAD
 }
 
 function dropCoursetwo() {
@@ -75,8 +74,3 @@ function dropCoursethree() {
       });
 	}
 }
-
-$timeout(initMap(),100);$timeout(initMap(),100);
-=======
-}
->>>>>>> bde01cda2d33aa325f87ed70e0997b33c9dd4076
