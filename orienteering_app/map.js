@@ -9,22 +9,24 @@ var courseone = [
 ['Six', 59.355846, 18.075837]
 ];
 
-// var coursetwo = {
-// 	1: {lat:59.363150, lng:18.082661};
-// 	2: {lat:59.365314, lng:18.089656};
-// 	3: {lat:59.366450, lng:18.084249};
-// 	4: {lat:59.365793, lng:18.094377};
-// 	5: {lat:59.362709, lng:18.095149};
-// 	6: {lat:59.360674, lng:18.091158}
-// }
-// var coursethree ={
-// 	1: {lat:59.326099, lng:18.068928};
-// 	2: {lat:59.324412, lng:18.067254};
-// 	3: {lat:59.322747, lng:18.070773};
-// 	4: {lat:59.323556, lng:18.074635};
-// 	5: {lat:59.324825, lng:18.072103};
-// 	6: {lat:59.324058, lng:18.075837}
-// }
+var coursetwo = [
+['Seven', 59.363150, 18.082661],
+['Eight', 59.365314, 18.089656],
+['Nine', 59.366450, 18.084249],
+['Ten', 59.365793, 18.094377],
+['Eleven', 59.362709, 18.095149],
+['Twelve', 59.360674, 18.091158]
+];
+
+var coursethree = [
+['Thirteen', 59.326099, 18.068928],
+['Fourteen', 59.324412, 18.067254],
+['Fifthteen', 59.322747, 18.070773],
+['Sixteen', 59.323556, 18.074635],
+['Seventeen', 59.324825, 18.072103],
+['Eightteen', 59.324058, 18.075837]
+];
+
 
 function initMap() {
 	// Map options
@@ -45,6 +47,28 @@ function dropCourseone() {
 	for (i = 0; i < courseone.length; i++) {  
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(courseone[i][1], courseone[i][2]),
+        map: map,
+        animation: google.maps.Animation.DROP
+      });
+	}
+}
+
+function dropCoursetwo() {
+	var marker, i;
+	for (i = 0; i < coursetwo.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(coursetwo[i][1], coursetwo[i][2]),
+        map: map,
+        animation: google.maps.Animation.DROP
+      });
+	}
+}
+
+function dropCoursethree() {
+	var marker, i;
+	for (i = 0; i < coursethree.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(coursethree[i][1], coursethree[i][2]),
         map: map,
         animation: google.maps.Animation.DROP
       });
