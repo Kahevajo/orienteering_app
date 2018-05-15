@@ -56,6 +56,7 @@ function dropCourseone() {
         animation: google.maps.Animation.DROP
       });
 	}
+	document.getElementById("chooseCourse").style.display = "None";
 }
 
 function dropCoursetwo() {
@@ -69,6 +70,7 @@ function dropCoursetwo() {
         animation: google.maps.Animation.DROP
       });
 	}
+	document.getElementById("chooseCourse").style.display = "None";
 }
 
 function dropCoursethree() {
@@ -82,4 +84,5 @@ function dropCoursethree() {
         animation: google.maps.Animation.DROP
       });
 	}
+	document.getElementById("chooseCourse").style.display = "None";
 }
