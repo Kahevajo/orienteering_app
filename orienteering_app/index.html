@@ -3,72 +3,67 @@
 
 <head>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, user-scalable=no,
-		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+    shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-	<title>Orienteering project</title>
+  <title>Orienteering project</title>
 
-	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-	<link rel="stylesheet" href="controls.css">
-	<link rel="stylesheet" href="map.css">
-	<link rel="stylesheet" href="activity.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="controls.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="activity.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="nfc.js"></script>
+  <script type="text/javascript" src="stopwatch.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script type="text/javascript" src="map.js"></script>
+  
+  <script>
+    // Redirect console.log to Evothings Workbench.
+    if (window.hyper && window.hyper.log) { console.log = hyper.log }
+  </script>
+
+  <head>
+    <style>
+
+.button {
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    align-items: center;
+    color: #424242;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+</style>
+     <title>Starting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width">
+    <meta name="viewport" content="width=device-width, minimal-ui">
+    <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="app.png" sizes="180x180">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+<body id="temp" align=center background="pictures/woods.jpg">
+  <h1 align="center" style="color: #424242; font-family: calibri;" > Welcome! </h1>
+  <p style="color: #424242; font-family: calibri"> Welcome! Let's do some orienteering and get some excercise! Good thing you have to bring your phone in case you get lost. Good luck! </p>
+	<a href= "start.html"> <h2 align="center"> <button style= "position: relative; top: 50%; margin-top: 50%; font-family: calibri;" class="button button1" id="explore" > START NOW! </button> </h2> </a>
 	<script>
-		// Redirect console.log to Evothings Workbench.
-		if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
-	
-	
-</head>
-
-<body>
-	
-	<ons-page id="tabbar-page">
-		<ons-toolbar class="topbar">
-			<div class="center">About</div>
-			<div class="right">
-				<ons-toolbar-button icon="ion-ios-stopwatch" onClick="showTemplateDialog()"></ons-toolbar-button>
-			</div>
-		</ons-toolbar>
-
-		<ons-tabbar visible="true">
-			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
-			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
-			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
-		</ons-tabbar>
-	</ons-page>
-
-
-	<template id="dialog.html">
-		<ons-dialog id="my-dialog">
-			<div>
-				<h1><time id="time">00:00:00</time></h1>
-				<button onClick="start()">Start</button>
-				<button onClick="stop()">Stop</button>
-				<button onClick="resetWatch()">Clear</button>
-				<button onClick="done()">Done</button><br/>
-				<ons-button onClick="hideDialog('my-dialog')">Close</ons-button>
-			</div>
-		</ons-dialog>
-	</template>
-
 </body>
-
-<script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="nfc.js"></script>
-<script type="text/javascript" src="stopwatch.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-<script type="text/javascript" src="map.js"></script>
-<script>
-	ons.ready(function () {
-		initMap();
-	});
-	document.addEventListener('show', function (event) {
-		initMap();
-	});
-</script>
 </html>
