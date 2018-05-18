@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+    shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>Orienteering project</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="controls.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="activity.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="nfc.js"></script>
+  <script type="text/javascript" src="stopwatch.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script type="text/javascript" src="map.js"></script>
+  
+  <script>
+    // Redirect console.log to Evothings Workbench.
+    if (window.hyper && window.hyper.log) { console.log = hyper.log }
+  </script>
+
+  <head>
+    <style>
+
+.button {
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+ .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+.button:hover {background-color: #e7e7e7;} 
+
+</style>
+     <title>Starting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width">
+    <meta name="viewport" content="width=device-width, minimal-ui">
+    <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="app.png" sizes="180x180">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+<body align=center background="woods.jpg">
+  <h1 align="center"> Welcome! </h1>
+	<a href= "orientering.html"> <h2 align="center"> <button background="black" style= "position: absolute; top: 50%; position: absolute; width: 50%" class="button" id="explore" > START NOW! </button> </h2> </a>
+  <h4 align="bottom" style="position: absolute; bottom: 10%;" class="button" id="explore" > Instructions </h4>
+	<script>
+	</script>
+</body>
+</html>
