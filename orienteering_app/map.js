@@ -90,3 +90,8 @@ function dropCoursethree() {
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	document.getElementById("stopwatchContainer").style.display = "Block"
 }
+
+function resetMap() {
+	document.getElementById("chooseCourseContainer").style.display = "Block";
+	document.getElementById("stopwatchContainer").style.display = "None"
+}
