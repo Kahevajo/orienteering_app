@@ -28,7 +28,6 @@ callback = function(nfcEvent) {
                 var img = document.createElement("img");
                 img.src="pictures/stamp1.png";
                 container.appendChild(img);
-                navigator.notification.beep(1);
             }
             break;
         case "c2":

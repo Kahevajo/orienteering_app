@@ -38,5 +38,7 @@ var resetWatch = function() {
 
 var done = function() {  
     resetMap();
+    stop();
+    resetWatch();
     initMap();
 }

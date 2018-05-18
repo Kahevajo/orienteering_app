@@ -33,7 +33,7 @@
 			</div>
 		</ons-toolbar>
 
-		<ons-tabbar visible="true">
+		<ons-tabbar id="tabbar" visible="true">
 			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
 			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
 			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
@@ -44,7 +44,7 @@
 	<template id="dialog.html">
 		<ons-dialog id="my-dialog">
 			<div>
-				<h1><time id="time">00:00:00</time></h1>
+				<h1><time id="time2">00:00:00</time></h1>
 				<button onClick="start()">Start</button>
 				<button onClick="stop()">Stop</button>
 				<button onClick="resetWatch()">Clear</button>

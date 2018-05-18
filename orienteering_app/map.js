@@ -1,5 +1,6 @@
 var map;
 var infoWindow;
+var currentCourse = -1;
 var courseone = [
 ['One', 59.356746, 18.069228],
 ['Two', 59.357555, 18.074120],
@@ -44,6 +45,7 @@ function initMap() {
 		console.log(error)
 	}
 	console.log("init done")
+	currentCourse = -1;
 }
 
 function dropCourseone() {
@@ -59,6 +61,7 @@ function dropCourseone() {
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	document.getElementById("stopwatchContainer").style.display = "Block"
+	currentCourse = 1;
 }
 
 function dropCoursetwo() {
@@ -74,6 +77,7 @@ function dropCoursetwo() {
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	document.getElementById("stopwatchContainer").style.display = "Block"
+	currentCourse = 2;
 }
 
 function dropCoursethree() {
@@ -89,9 +93,27 @@ function dropCoursethree() {
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	document.getElementById("stopwatchContainer").style.display = "Block"
+	currentCourse = 3;
 }
 
 function resetMap() {
-	document.getElementById("chooseCourseContainer").style.display = "Block";
+	
+	if(currentCourse >= 1) {
+		var courseTime = document.getElementById('time' + currentCourse);
+		courseTime.innerHTML = document.getElementById('time').textContent;
+	}
+	
+	for(i = 1; i<=6; i++) {
+		var stamp = document.getElementById('c' + i);
+		if (stamp.hasChildNodes()) {
+			img = stamp.getElementsByTagName('img')[0];
+			if(img != null) {
+				stamp.removeChild(img);
+			}
+		}
+	}
+	
+	document.getElementById("tabbar").setActiveTab(2);
 	document.getElementById("stopwatchContainer").style.display = "None"
+	document.getElementById("chooseCourseContainer").style.display = "Block";
 }
