@@ -57,7 +57,8 @@ function dropCourseone() {
         animation: google.maps.Animation.DROP
       });
 	}
-	document.getElementById("chooseCourse").style.display = "None";
+	document.getElementById("chooseCourseContainer").style.display = "None";
+	document.getElementById("stopwatchContainer").style.display = "Block"
 }
 
 function dropCoursetwo() {
@@ -71,7 +72,8 @@ function dropCoursetwo() {
         animation: google.maps.Animation.DROP
       });
 	}
-	document.getElementById("chooseCourse").style.display = "None";
+	document.getElementById("chooseCourseContainer").style.display = "None";
+	document.getElementById("stopwatchContainer").style.display = "Block"
 }
 
 function dropCoursethree() {
@@ -85,5 +87,6 @@ function dropCoursethree() {
         animation: google.maps.Animation.DROP
       });
 	}
-	document.getElementById("chooseCourse").style.display = "None";
+	document.getElementById("chooseCourseContainer").style.display = "None";
+	document.getElementById("stopwatchContainer").style.display = "Block"
 }
