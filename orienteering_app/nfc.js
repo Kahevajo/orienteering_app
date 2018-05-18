@@ -43,7 +43,7 @@ callback = function(nfcEvent) {
             var container = document.getElementById("c3");
             if (container.childNodes.length <= 1) {
                 var img = document.createElement("img");
-                img.src = "pictures/stamp2.png";
+                img.src = "pictures/stamp3.png";
                 container.appendChild(img);
             }
             break;
@@ -51,7 +51,7 @@ callback = function(nfcEvent) {
             var container = document.getElementById("c4");
             if (container.childNodes.length <= 1) {
                 var img = document.createElement("img");
-                img.src = "pictures/stamp2.png";
+                img.src = "pictures/stamp4.png";
                 container.appendChild(img);
             }
             break;
@@ -59,7 +59,7 @@ callback = function(nfcEvent) {
             var container = document.getElementById("c5");
             if (container.childNodes.length <= 1) {
                 var img = document.createElement("img");
-                img.src = "pictures/stamp2.png";
+                img.src = "pictures/stamp5.png";
                 container.appendChild(img);
             }
             break;
@@ -67,7 +67,7 @@ callback = function(nfcEvent) {
             var container = document.getElementById("c6");
             if (container.childNodes.length <= 1) {
                 var img = document.createElement("img");
-                img.src = "pictures/stamp2.png";
+                img.src = "pictures/stamp6.png";
                 container.appendChild(img);
             }
             break;
