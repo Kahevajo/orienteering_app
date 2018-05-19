@@ -1,0 +1,39 @@
+body{
+padding: 20px;
+}
+
+h1, h2, h3, h4, h5, p, a{
+font-family: Calibri;
+text-decoration: none;
+}
+
+#welcomeContainer{
+padding-top: 40px;
+}
+
+.button {
+background: #476b6b;
+/*background-color: #FEF6F3;
+border: 2px solid #3E575B;
+/*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+color: #FFF;
+text-align: center;
+text-decoration: none;
+display: block;
+font-size: 20px;
+margin: 5px;
+transition-duration: 0.4s;
+border-radius: 5px;
+}
+
+.button:active, .button:focus {
+opacity: 0.5;
+}
+
+#getStarted{
+padding: 10px;
+padding-right: 20px;
+padding-left: 20px;
+margin-top: 150px;
+font-family: Calibri;
+}

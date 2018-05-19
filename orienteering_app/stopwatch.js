@@ -25,10 +25,12 @@ var timer = function() {
 
 var start = function() {
     timer();
+    document.getElementById("startStopwatch").style.display = "None";
 }
 
 var stop = function() {
     clearTimeout(t);
+    document.getElementById("startStopwatch").style.display = "block";
 }
 
 var resetWatch = function() {

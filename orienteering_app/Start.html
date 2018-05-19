@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<link rel="stylesheet" href="controls.css">
 	<link rel="stylesheet" href="map.css">
+	<link rel="stylesheet" href="index.css">
 	<link rel="stylesheet" href="activity.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script>
@@ -43,12 +44,12 @@
 
 	<template id="dialog.html">
 		<ons-dialog id="my-dialog">
-			<div>
+			<div align="center">
 				<h1><time id="time">00:00:00</time></h1>
-				<button class="button" onClick="start()">Start</button>
-				<button onClick="stop()">Stop</button>
-				<button onClick="resetWatch()">Clear</button>
-				<button onClick="done()">Done</button><br/>
+				<button class="stopwatchButton" id="startStopwatch" onClick="start()">Start this course!</button><br/>
+				<button class="stopwatchButton" onClick="stop()" id="stopStopwatch">Stop</button>
+				<button class="stopwatchButton" onClick="resetWatch()" id="clearStopwatch">Reset</button>
+				<button class="stopwatchButton" onClick="done()" id="courseDone">Done</button><br/>
 				<ons-button onClick="hideDialog('my-dialog')">Close</ons-button>
 			</div>
 		</ons-dialog>

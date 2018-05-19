@@ -60,7 +60,7 @@ function dropCourseone() {
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
-	document.getElementById("stopwatchContainer").style.display = "Block"
+	//document.getElementById("stopwatchContainer").style.display = "Block"
 	currentCourse = 1;
 }
 
@@ -76,7 +76,7 @@ function dropCoursetwo() {
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
-	document.getElementById("stopwatchContainer").style.display = "Block"
+	//document.getElementById("stopwatchContainer").style.display = "Block"
 	currentCourse = 2;
 }
 
@@ -92,7 +92,7 @@ function dropCoursethree() {
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
-	document.getElementById("stopwatchContainer").style.display = "Block"
+	//document.getElementById("stopwatchContainer").style.display = "Block"
 	currentCourse = 3;
 }
 
@@ -114,6 +114,6 @@ function resetMap() {
 	}
 	
 	document.getElementById("tabbar").setActiveTab(2);
-	document.getElementById("stopwatchContainer").style.display = "None"
+	//document.getElementById("stopwatchContainer").style.display = "None"
 	document.getElementById("chooseCourseContainer").style.display = "Block";
 }
