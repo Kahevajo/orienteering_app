@@ -45,6 +45,3 @@ var done = function() {
     initMap();
 }
 
-var cancel = function(){
-    window.location = 'map.html';
-}

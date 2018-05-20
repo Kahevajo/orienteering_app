@@ -1,5 +1,9 @@
+#mapContainer{
+overflow-y: hidden;
+}
+
 #map {
-height: 100vh;
+height: 100%;
 z-index: 55;
 text-align: center;
 }
@@ -12,9 +16,11 @@ margin-top: 20px;
 width: 100%;
 background: #FFF;
 text-align: center;
-padding-top: 20px;
+padding-top: 100px;
 padding-bottom: 20px;
 z-index: 56;
+height: 100%;
+opacity: 0.9;
 }
 
 
