@@ -2,3 +2,17 @@
     float: right;
     margin-top: -50px;
 }
+
+.title{
+	font-family: Calibri;
+	color: grey;
+}
+
+.topbar{
+	background-color: #476b6b;
+}
+.center{
+	color: white;
+}
+
+

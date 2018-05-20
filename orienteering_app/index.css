@@ -30,6 +30,8 @@ border-radius: 5px;
 opacity: 0.5;
 }
 
+.button:hover {background-color: #e7e7e7;}
+
 #getStarted{
 padding: 10px;
 padding-right: 20px;
