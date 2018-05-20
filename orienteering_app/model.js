@@ -1,6 +1,5 @@
 var init = function() {
     var localStorage = window.localStorage;
-    currentProfile = null
     if (localStorage.getItem('profiles') === null) {
         var profiles = [];
         localStorage.setItem('profiles', JSON.stringify(profiles));
@@ -13,10 +12,11 @@ var createProfile = function () {
     var profile = {
         name: name,
         events: [],
+        currentCourse: null
     }
     var index = addProfile(profile);
-    if(!currentProfile) {
-        currentProfile = index;
+    if(!getCurrentProfile()) {
+        localStorage.setItem("currentProfile", index)
     }
     fillProfiles();
 }
@@ -38,8 +38,10 @@ var fillProfiles = function() {
         card.appendChild(title);
         a.appendChild(card);
         container.appendChild(a);
-        currentProfile = index;
-    });
+        a.onclick = function () {
+            localStorage.setItem("currentProfile", index)
+        };
+    })
 }
 
 // Add profile to localstorage
@@ -57,16 +59,29 @@ var addProfile = function(data) {
     } else {
         return -1;
     }
+}
 
+var updateProfile = function(data, index) {
+    var profiles = [];
+    // Parse the serialized data back into an aray of objects
+    profiles = JSON.parse(localStorage.getItem('profiles'));
+    // Update to the new data (whether it be an object or anything else) onto the array
+    profiles[index] = data;
+    // Re-serialize the array back into a string and store it in localStorage
+    localStorage.setItem('profiles', JSON.stringify(profiles));
 }
 
 // Get current profile
-var getProfile = function() {
+var getProfile = function(index) {
     var a = []
 
     a = JSON.parse(localStorage.getItem('profiles'));
 
-    return a[currentProfile];
+    return a[index];
+}
+
+var getCurrentProfile = function() {
+    return JSON.parse(localStorage.getItem('currentProfile'));
 }
 
 // Get all profiles from localstorage
