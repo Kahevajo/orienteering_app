@@ -23,6 +23,21 @@ height: 100%;
 opacity: 0.9;
 }
 
+#stopwatchFunc{
+display: none;
+}
+
+#stopwatchFunc ons-button{
+color: #476b6b;
+background: none;
+border: none;
+font-size: 50px;
+display: inline-block;
+}
+
+#hideClockButton{
+display: none;
+}
 
 #chooseCourseContainer h1{
 font-family: Calibri;
@@ -45,7 +60,7 @@ z-index: 56;
 }
 
 .stopwatchButton{
-min-width: 80px;
+max-width: 80px;
 text-align: center;
 color: #FFF;
 background: #476b6b;

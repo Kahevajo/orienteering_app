@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="index.css">
 	<link rel="stylesheet" href="activity.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link href="https://unpkg.com/ionicons@4.1.1/dist/css/ionicons.min.css" rel="stylesheet">
 	<script>
 		// Redirect console.log to Evothings Workbench.
 		if (window.hyper && window.hyper.log) { console.log = hyper.log }
@@ -31,14 +32,14 @@
 			<div class="left">
 				<a href="profile.html"><ons-back-button >Back</ons-back-button></a>
 			</div>
-			<div class="center">About</div>
+			<div class="center">Map</div>
 			<div class="right">
 				<ons-toolbar-button icon="ion-ios-stopwatch" onClick="showTemplateDialog()"></ons-toolbar-button>
 			</div>
 		</ons-toolbar>
 
 		<ons-tabbar id="tabbar" visible="true">
-			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
+			<ons-tab page="map.html" label="Map" icon="ion-ios-map, material:md-home" active></ons-tab>
 			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
 			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
 		</ons-tabbar>
@@ -49,19 +50,22 @@
 		<ons-dialog id="my-dialog">
 			<div align="center">
 				<h1><time id="time">00:00:00</time></h1>
-				<button class="stopwatchButton" id="startStopwatch" onClick="start()">Start this course!</button><br/>
-				<button class="stopwatchButton" onClick="stop()" id="stopStopwatch">Stop</button>
-				<button class="stopwatchButton" onClick="resetWatch()" id="clearStopwatch">Reset</button>
-				<button class="stopwatchButton" onClick="done()" id="courseDone">Done</button>
-				<a href= "start.html"> <button class="stopwatchButton" id="cancelCourse">Cancel this course!</button></a>
+				<div id="startOrCancel">
+					<button class="stopwatchButton" id="startStopwatch" onClick="start()">Start</button>
+					<a href="start.html"> <button class="stopwatchButton" id="cancelCourse">Abort</button></a>
+				</div>
+				<div id="stopwatchFunc">
+					<ons-button icon="ion-ios-pause" class="stopwatchButton" onClick="stop()" id="stopStopwatch"></ons-button>
+					<ons-button icon="ion-ios-refresh" class="stopwatchButton" onClick="resetWatch()" id="clearStopwatch"></ons-button>
+					<ons-button icon="ion-ios-checkmark" class="stopwatchButton" onClick="done(), hideDialog('my-dialog')" id="courseDone"></ons-button>
+				</div>
 				<br/>
-				<ons-button onClick="hideDialog('my-dialog')">Hide Clock</ons-button>
+				<div id="hideClockButton"><ons-button onClick="hideDialog('my-dialog')">Hide Clock</ons-button></div>
 			</div>
 		</ons-dialog>
 	</template>
 
 </body>
-
 <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
