@@ -34,7 +34,7 @@
 			</div>
 		</ons-toolbar>
 
-		<ons-tabbar visible="true">
+		<ons-tabbar id="tabbar" visible="true">
 			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
 			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
 			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
@@ -50,9 +50,9 @@
 				<button class="stopwatchButton" onClick="stop()" id="stopStopwatch">Stop</button>
 				<button class="stopwatchButton" onClick="resetWatch()" id="clearStopwatch">Reset</button>
 				<button class="stopwatchButton" onClick="done()" id="courseDone">Done</button>
-				<a href= "start.html"> <button class="stopwatchButton" id="cancelCourse">Cancel</button></a>
+				<a href= "start.html"> <button class="stopwatchButton" id="cancelCourse">Cancel this course!</button></a>
 				<br/>
-				<ons-button onClick="hideDialog('my-dialog')">Hide</ons-button>
+				<ons-button onClick="hideDialog('my-dialog')">Hide Clock</ons-button>
 			</div>
 		</ons-dialog>
 	</template>
