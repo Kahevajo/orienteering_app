@@ -117,8 +117,8 @@ function dropCoursethree() {
 
 function resetMap() {
 	
-	if(currentCourse >= 1) {
-		var courseTime = document.getElementById('time' + currentCourse);
+	if(profile.currentCourse >= 1) {
+		var courseTime = document.getElementById('time' + profile.currentCourse);
 		courseTime.innerHTML = document.getElementById('time').textContent;
 	}
 	
@@ -132,6 +132,8 @@ function resetMap() {
 		}
 	}
 	
+	profile.currentCourse = undefined
+	updateProfile(profile, getCurrentProfile());
 	document.getElementById("tabbar").setActiveTab(2);
 	//document.getElementById("stopwatchContainer").style.display = "None"
 	document.getElementById("chooseCourseContainer").style.display = "Block";

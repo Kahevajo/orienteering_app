@@ -48,7 +48,6 @@ var done = function() {
     resetMap();
     stop();
     resetWatch();
-    localStorage.setItem("currentCourse", undefined);
     initMap();
     document.getElementById("stopwatchFunc").style.display = "none";
 }
