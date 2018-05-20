@@ -44,3 +44,7 @@ var done = function() {
     resetWatch();
     initMap();
 }
+
+var cancel = function(){
+    window.location = 'map.html';
+}
