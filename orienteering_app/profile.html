@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Orienteering project</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+
+
+    <script>
+        // Redirect console.log to Evothings Workbench.
+        if (window.hyper && window.hyper.log) { console.log = hyper.log }
+    </script>
+
+</head>
+
+<body>
+        <ons-page id="profiles">
+            <ons-toolbar class="topbar">
+                <div class="center">Profiles</div>
+            </ons-toolbar>
+            <div id="cardContainer">
+
+            </div>
+            <ons-card id="createCard">
+                <div class="title">Create profile</div>
+                <ons-fab onclick="createProfile()" id="createProfile">
+                    <ons-icon icon="md-plus"></ons-icon>
+                </ons-fab>
+                <div class="content">
+                    <input id="createProfileName" type="text">
+                </div>
+            </ons-card>
+        </ons-page>
+</body>
+
+</html>
