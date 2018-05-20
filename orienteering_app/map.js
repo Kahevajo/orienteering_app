@@ -118,11 +118,19 @@ function dropCoursethree() {
 }
 
 function resetMap() {
-	
-	if(profile.currentCourse >= 1) {
-		var courseTime = document.getElementById('time' + profile.currentCourse);
-		courseTime.innerHTML = document.getElementById('time').textContent;
+	profile.events.push([document.getElementById('time').textContent, profile.currentCourse]);
+
+	var progress = document.getElementById("progress");
+	while (progress.firstChild) {
+		progress.removeChild(progress.firstChild);
 	}
+
+	console.log("a");
+
+	for(i = 0; i < profile.events.length; i++) {
+		progress.append(createEvent(profile.events[i][0], profile.events[i][1]));
+	}
+	console.log("b");
 	
 	for(i = 1; i<=6; i++) {
 		var stamp = document.getElementById('c' + i);
@@ -134,9 +142,28 @@ function resetMap() {
 		}
 	}
 	
-	profile.currentCourse = undefined
+	profile.currentCourse = undefined;
 	updateProfile(profile, getCurrentProfile());
 	document.getElementById("tabbar").setActiveTab(2);
 	//document.getElementById("stopwatchContainer").style.display = "None"
 	document.getElementById("chooseCourseContainer").style.display = "Block";
+}
+
+var createEvent = function(inputTime, inputCourse) {
+	var course = document.createElement("div");
+	course.className = "course";
+	var courseTitle = document.createElement("div");
+	courseTitle.className = "courseNumber";
+	courseTitle.innerHTML = "Course " + inputCourse;
+	var timeContainer = document.createElement("div");
+	timeContainer.className = "courseTime";
+	var time = document.createElement("span");
+	time.innerHTML = inputTime;
+	time.className = "ion-ios-time";
+
+	course.appendChild(courseTitle);
+	timeContainer.appendChild(time);
+	course.appendChild(timeContainer);
+
+	return course;
 }
