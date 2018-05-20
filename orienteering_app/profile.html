@@ -15,34 +15,35 @@
     <link rel="stylesheet" href="profile.css">
 
     <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    <script type="text/javascript" src="model.js"></script>
-
-
+    
+    
     <script>
         // Redirect console.log to Evothings Workbench.
         if (window.hyper && window.hyper.log) { console.log = hyper.log }
     </script>
-
+    
 </head>
 
 <body>
-        <ons-page id="profiles">
-            <ons-toolbar class="topbar">
-                <div class="center">Profiles</div>
-            </ons-toolbar>
-            <div id="cardContainer">
-
+    <ons-page id="profiles">
+        <ons-toolbar class="topbar">
+            <div class="center">Profiles</div>
+        </ons-toolbar>
+        <div id="cardContainer">
+            
+        </div>
+        <ons-card id="createCard">
+            <div class="title">Create profile</div>
+            <ons-fab onclick="createProfile()" id="createProfile">
+                <ons-icon icon="md-plus"></ons-icon>
+            </ons-fab>
+            <div class="content">
+                <input id="createProfileName" type="text">
             </div>
-            <ons-card id="createCard">
-                <div class="title">Create profile</div>
-                <ons-fab onclick="createProfile()" id="createProfile">
-                    <ons-icon icon="md-plus"></ons-icon>
-                </ons-fab>
-                <div class="content">
-                    <input id="createProfileName" type="text">
-                </div>
-            </ons-card>
-        </ons-page>
+        </ons-card>
+    </ons-page>
 </body>
+
+<script type="text/javascript" src="model.js"></script>
 
 </html>

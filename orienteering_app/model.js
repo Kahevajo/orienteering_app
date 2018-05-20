@@ -1,8 +1,11 @@
 var init = function() {
-    var profiles = [];
     var localStorage = window.localStorage;
-    localStorage.setItem('profiles', JSON.stringify(profiles));
-    currentProfile = null;
+    currentProfile = null
+    if (localStorage.getItem('profiles') === null) {
+        var profiles = [];
+        localStorage.setItem('profiles', JSON.stringify(profiles));
+    }
+    document.getElementById("cardContainer").addEventListener('load', fillProfiles(), false);
 }
 
 var createProfile = function () {
@@ -24,7 +27,7 @@ var fillProfiles = function() {
         container.removeChild(container.firstChild);
     }
     var profiles = getProfiles();
-    profiles.forEach(profile => {
+    profiles.forEach(function(profile, index) {
         var a = document.createElement("a");
         a.href = "start.html";
         var card = document.createElement("ons-card");
@@ -35,6 +38,7 @@ var fillProfiles = function() {
         card.appendChild(title);
         a.appendChild(card);
         container.appendChild(a);
+        currentProfile = index;
     });
 }
 
