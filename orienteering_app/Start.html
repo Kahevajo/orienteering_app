@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="index.css">
 	<link rel="stylesheet" href="activity.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link href="https://unpkg.com/ionicons@4.1.1/dist/css/ionicons.min.css" rel="stylesheet">
 	<script>
 		// Redirect console.log to Evothings Workbench.
 		if (window.hyper && window.hyper.log) { console.log = hyper.log }
@@ -29,13 +30,17 @@
 	<ons-page id="tabbar-page">
 		<ons-toolbar class="topbar">
 			<div class="center">About</div>
+			<div class="left">
+				<a href="index.html">
+				<ons-toolbar-button>Log out</ons-toolbar-button></a>
+			</div>
 			<div class="right">
 				<ons-toolbar-button icon="ion-ios-stopwatch" onClick="showTemplateDialog()"></ons-toolbar-button>
 			</div>
 		</ons-toolbar>
 
 		<ons-tabbar id="tabbar" visible="true">
-			<ons-tab page="map.html" label="Map" icon="ion-map, material:md-home" active></ons-tab>
+			<ons-tab page="map.html" label="Map" icon="ion-ios-map, material:md-home" active></ons-tab>
 			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
 			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
 		</ons-tabbar>
@@ -58,7 +63,6 @@
 	</template>
 
 </body>
-
 <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
