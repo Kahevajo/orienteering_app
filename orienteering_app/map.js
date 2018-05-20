@@ -1,6 +1,6 @@
 var map;
 var infoWindow;
-var currentCourse = -1;
+var profile;
 var courseone = [
 ['One', 59.356746, 18.069228],
 ['Two', 59.357555, 18.074120],
@@ -33,6 +33,7 @@ var centerthree = {lat: 59.324825, lng:18.072103};
 
 function initMap() {
 	// Map options
+	profile = getProfile(getCurrentProfile());
 	console.log("init")
 	try {
 		map = new google.maps.Map(document.getElementById("map"),  {
@@ -43,8 +44,23 @@ function initMap() {
 	} catch (error) {
 		console.log(error)
 	}
+	console.log(profile.currentCourse);
+	if(!(profile.currentCourse === undefined)) {
+		switch (profile.currentCourse) {
+			case 1:
+			dropCourseone();
+			break;
+			case 2:
+			dropCoursetwo();
+			break;
+			case 1:
+			dropCoursethree();
+			break;
+			default:
+			break;
+		}
+	}
 	console.log("init done")
-	currentCourse = -1;
 }
 
 function dropCourseone() {
@@ -61,7 +77,8 @@ function dropCourseone() {
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	//document.getElementById("stopwatchContainer").style.display = "Block"
-	currentCourse = 1;
+	profile.currentCourse = 1
+	updateProfile(profile, getCurrentProfile());
 }
 
 function dropCoursetwo() {
@@ -78,7 +95,8 @@ function dropCoursetwo() {
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	//document.getElementById("stopwatchContainer").style.display = "Block"
-	currentCourse = 2;
+	profile.currentCourse = 2
+	updateProfile(profile, getCurrentProfile());
 }
 
 function dropCoursethree() {
@@ -95,7 +113,8 @@ function dropCoursethree() {
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	//document.getElementById("stopwatchContainer").style.display = "Block"
-	currentCourse = 3;
+	profile.currentCourse = 3
+	updateProfile(profile, getCurrentProfile());
 }
 
 function resetMap() {
