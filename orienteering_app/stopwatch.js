@@ -25,12 +25,18 @@ var timer = function() {
 
 var start = function() {
     timer();
-    document.getElementById("startStopwatch").style.display = "None";
+    document.getElementById("stopwatchFunc").style.display = "block";
+    document.getElementById("hideClockButton").style.display = "block";
+    document.getElementById("startOrCancel").style.display = "none";
+    document.getElementById("hideClockButton").style.display = "block";
+
 }
 
 var stop = function() {
     clearTimeout(t);
-    document.getElementById("startStopwatch").style.display = "block";
+    document.getElementById("startOrCancel").style.display = "block";
+    document.getElementById("hideClockButton").style.display = "none";
+
 }
 
 var resetWatch = function() {
@@ -43,5 +49,6 @@ var done = function() {
     stop();
     resetWatch();
     initMap();
+    document.getElementById("stopwatchFunc").style.display = "none";
 }
 
