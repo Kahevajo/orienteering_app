@@ -31,7 +31,6 @@ var coursethree = [
 ];
 var centerthree = {lat: 59.324825, lng:18.072103};
 
-
 function initMap() {
 	// Map options
 	console.log("init")
@@ -56,7 +55,8 @@ function dropCourseone() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(courseone[i][1], courseone[i][2]),
         map: map,
-        animation: google.maps.Animation.DROP
+		animation: google.maps.Animation.DROP, 
+		icon: 'control.png'
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
@@ -72,7 +72,8 @@ function dropCoursetwo() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(coursetwo[i][1], coursetwo[i][2]),
         map: map,
-        animation: google.maps.Animation.DROP
+		animation: google.maps.Animation.DROP, 
+		icon: 'control.png'
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
@@ -88,7 +89,8 @@ function dropCoursethree() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(coursethree[i][1], coursethree[i][2]),
         map: map,
-        animation: google.maps.Animation.DROP
+		animation: google.maps.Animation.DROP, 
+		icon: 'control.png'
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
