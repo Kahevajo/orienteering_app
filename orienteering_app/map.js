@@ -1,6 +1,6 @@
 var map;
 var infoWindow;
-var currentCourse = -1;
+var profile;
 var courseone = [
 ['One', 59.356746, 18.069228],
 ['Two', 59.357555, 18.074120],
@@ -31,9 +31,9 @@ var coursethree = [
 ];
 var centerthree = {lat: 59.324825, lng:18.072103};
 
-
 function initMap() {
 	// Map options
+	profile = getProfile(getCurrentProfile());
 	console.log("init")
 	try {
 		map = new google.maps.Map(document.getElementById("map"),  {
@@ -44,8 +44,23 @@ function initMap() {
 	} catch (error) {
 		console.log(error)
 	}
+	console.log(profile.currentCourse);
+	if(!(profile.currentCourse === undefined)) {
+		switch (profile.currentCourse) {
+			case 1:
+			dropCourseone();
+			break;
+			case 2:
+			dropCoursetwo();
+			break;
+			case 1:
+			dropCoursethree();
+			break;
+			default:
+			break;
+		}
+	}
 	console.log("init done")
-	currentCourse = -1;
 }
 
 function dropCourseone() {
@@ -56,12 +71,14 @@ function dropCourseone() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(courseone[i][1], courseone[i][2]),
         map: map,
-        animation: google.maps.Animation.DROP
+		animation: google.maps.Animation.DROP, 
+		icon: 'control.png'
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	//document.getElementById("stopwatchContainer").style.display = "Block"
-	currentCourse = 1;
+	profile.currentCourse = 1
+	updateProfile(profile, getCurrentProfile());
 }
 
 function dropCoursetwo() {
@@ -72,12 +89,14 @@ function dropCoursetwo() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(coursetwo[i][1], coursetwo[i][2]),
         map: map,
-        animation: google.maps.Animation.DROP
+		animation: google.maps.Animation.DROP, 
+		icon: 'control.png'
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	//document.getElementById("stopwatchContainer").style.display = "Block"
-	currentCourse = 2;
+	profile.currentCourse = 2
+	updateProfile(profile, getCurrentProfile());
 }
 
 function dropCoursethree() {
@@ -88,18 +107,20 @@ function dropCoursethree() {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(coursethree[i][1], coursethree[i][2]),
         map: map,
-        animation: google.maps.Animation.DROP
+		animation: google.maps.Animation.DROP, 
+		icon: 'control.png'
       });
 	}
 	document.getElementById("chooseCourseContainer").style.display = "None";
 	//document.getElementById("stopwatchContainer").style.display = "Block"
-	currentCourse = 3;
+	profile.currentCourse = 3
+	updateProfile(profile, getCurrentProfile());
 }
 
 function resetMap() {
 	
-	if(currentCourse >= 1) {
-		var courseTime = document.getElementById('time' + currentCourse);
+	if(profile.currentCourse >= 1) {
+		var courseTime = document.getElementById('time' + profile.currentCourse);
 		courseTime.innerHTML = document.getElementById('time').textContent;
 	}
 	
@@ -113,6 +134,8 @@ function resetMap() {
 		}
 	}
 	
+	profile.currentCourse = undefined
+	updateProfile(profile, getCurrentProfile());
 	document.getElementById("tabbar").setActiveTab(2);
 	//document.getElementById("stopwatchContainer").style.display = "None"
 	document.getElementById("chooseCourseContainer").style.display = "Block";

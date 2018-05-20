@@ -33,6 +33,7 @@ background: none;
 border: none;
 font-size: 50px;
 display: inline-block;
+padding-bottom: 20px;
 }
 
 #hideClockButton{
@@ -42,7 +43,6 @@ display: none;
 #chooseCourseContainer h1{
 font-family: Calibri;
 }
-
 
 #stopwatchContainer{
 position: absolute;

@@ -50,16 +50,15 @@
 		<ons-dialog id="my-dialog">
 			<div align="center">
 				<h1><time id="time">00:00:00</time></h1>
-				<div id="startOrCancel">
-					<button class="stopwatchButton" id="startStopwatch" onClick="start()">Start</button>
-					<a href="start.html"> <button class="stopwatchButton" id="cancelCourse">Abort</button></a>
-				</div>
 				<div id="stopwatchFunc">
 					<ons-button icon="ion-ios-pause" class="stopwatchButton" onClick="stop()" id="stopStopwatch"></ons-button>
 					<ons-button icon="ion-ios-refresh" class="stopwatchButton" onClick="resetWatch()" id="clearStopwatch"></ons-button>
 					<ons-button icon="ion-ios-checkmark" class="stopwatchButton" onClick="done(), hideDialog('my-dialog')" id="courseDone"></ons-button>
 				</div>
-				<br/>
+				<div id="startOrCancel">
+					<button class="stopwatchButton" id="startStopwatch" onClick="start()">Start</button>
+					<a href="start.html"> <button class="stopwatchButton" id="cancelCourse">Abort</button></a>
+				</div>
 				<div id="hideClockButton"><ons-button onClick="hideDialog('my-dialog')">Hide Clock</ons-button></div>
 			</div>
 		</ons-dialog>
@@ -69,6 +68,7 @@
 <script type="text/javascript" src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="model.js"></script>
 <script type="text/javascript" src="nfc.js"></script>
 <script type="text/javascript" src="stopwatch.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
