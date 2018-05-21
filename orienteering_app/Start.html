@@ -30,16 +30,16 @@
 	<ons-page id="tabbar-page">
 		<ons-toolbar class="topbar">
 			<div class="left">
-				<a href="profile.html"><ons-toolbar-button>Log out</ons-toolbar-button></a>
+				<a href="profile.html"><ons-toolbar-button style="color:white">Log out</ons-toolbar-button></a>
 			</div>
 			<div class="center">Map</div>
 			<div class="right">
-				<ons-toolbar-button icon="ion-ios-stopwatch" onClick="showTemplateDialog()"></ons-toolbar-button>
+				<ons-toolbar-button style="color:white" icon="ion-ios-stopwatch" onClick="showTemplateDialog()"></ons-toolbar-button>
 			</div>
 		</ons-toolbar>
 
 		<ons-tabbar id="tabbar" visible="true">
-			<ons-tab page="map.html" label="Map" icon="ion-ios-map, material:md-home" active></ons-tab>
+			<ons-tab  page="map.html" label="Map" icon="ion-ios-map, material:md-home" active></ons-tab>
 			<ons-tab page="controls.html" label="Controls" icon="ion-ios-flag" active-icon="ion-ios-flag"></ons-tab>
 			<ons-tab page="activity.html" label="Activity" icon="ion-ios-person" active-icon="ion-ios-person"></ons-tab>
 		</ons-tabbar>
@@ -50,16 +50,15 @@
 		<ons-dialog id="my-dialog">
 			<div align="center">
 				<h1><time id="time">00:00:00</time></h1>
-				<div id="startOrCancel">
-					<button class="stopwatchButton" id="startStopwatch" onClick="start()">Start</button>
-					<a href="start.html"> <button class="stopwatchButton" id="cancelCourse">Abort</button></a>
-				</div>
 				<div id="stopwatchFunc">
 					<ons-button icon="ion-ios-pause" class="stopwatchButton" onClick="stop()" id="stopStopwatch"></ons-button>
 					<ons-button icon="ion-ios-refresh" class="stopwatchButton" onClick="resetWatch()" id="clearStopwatch"></ons-button>
-					<ons-button icon="ion-ios-checkmark" class="stopwatchButton" onClick="done(), hideDialog('my-dialog')" id="courseDone"></ons-button>
+					<ons-button icon="ion-ios-checkbox-outline" class="stopwatchButton" onClick="done(), hideDialog('my-dialog')" id="courseDone"></ons-button>
 				</div>
-				<br/>
+				<div id="startOrCancel">
+					<button class="stopwatchButton stat" id="startStopwatch" onClick="start()">Start</button>
+					<a href="start.html"> <button class="stopwatchButton stat" id="cancelCourse">Cancel</button></a>
+				</div>
 				<div id="hideClockButton"><ons-button onClick="hideDialog('my-dialog')">Hide Clock</ons-button></div>
 			</div>
 		</ons-dialog>

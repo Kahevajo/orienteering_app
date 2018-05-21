@@ -1,6 +1,12 @@
+#progress{
+padding: 10px;
+}
+
 .course{
 border-bottom: 1px solid #000;
 padding: 10px;
+padding-top: 20px;
+padding-bottom:20px;
 font-size: 20px;
 color: #476b6b;
 }

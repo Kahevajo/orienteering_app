@@ -1,18 +1,39 @@
 #createProfile {
-    float: right;
-    margin-top: -50px;
+float: right;
+margin-top: -10px;
+box-shadow: none;
+background: #476b6b;
+color:#FFF;
+border: none;
+}
+
+#createProfileName{
+border-radius: 3px;
+background: #F2F2F2;
+padding: 5px;
+font-size: 20px;
+width:200px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#cardContainer{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+text-decoration: none;
 }
 
 .title{
-	font-family: Calibri;
-	color: grey;
+font-family: Calibri;
+color: grey;
+text-decoration: none;
 }
 
 .topbar{
-	background-color: #476b6b;
+text-align: center;
+background-color: #476b6b;
+
 }
 .center{
-	color: white;
+color: white;
 }
 
 

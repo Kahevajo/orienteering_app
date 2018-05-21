@@ -158,7 +158,7 @@ var createEvent = function(inputTime, inputCourse) {
 	var timeContainer = document.createElement("div");
 	timeContainer.className = "courseTime";
 	var time = document.createElement("span");
-	time.innerHTML = inputTime;
+	time.innerHTML = " " + inputTime;
 	time.className = "ion-ios-time";
 
 	course.appendChild(courseTitle);
