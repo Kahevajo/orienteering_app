@@ -35,6 +35,18 @@ function initMap() {
 	// Map options
 	profile = getProfile(getCurrentProfile());
 	console.log("init")
+
+	var progress = document.getElementById("progress");
+	while (progress.firstChild) {
+		progress.removeChild(progress.firstChild);
+		console.log("wipe")
+	}
+	
+	if (profile.events.length != 0){
+		for(i = 0; i < profile.events.length; i++) {
+			progress.append(createEvent(profile.events[i][0], profile.events[i][1]));
+		}	
+	}
 	try {
 		map = new google.maps.Map(document.getElementById("map"),  {
 			zoom:14,
@@ -146,6 +158,16 @@ function resetMap() {
 	updateProfile(profile, getCurrentProfile());
 	document.getElementById("tabbar").setActiveTab(2);
 	//document.getElementById("stopwatchContainer").style.display = "None"
+	document.getElementById("chooseCourseContainer").style.display = "Block";
+}
+
+function startOver() {
+	for(i = 0; i < profile.events.length; i++) {
+		progress.append(createEvent(profile.events[i][0], profile.events[i][1]));
+	}	
+	profile.currentCourse = undefined;
+	updateProfile(profile, getCurrentProfile());
+	document.getElementById("tabbar").setActiveTab(0);
 	document.getElementById("chooseCourseContainer").style.display = "Block";
 }
 
