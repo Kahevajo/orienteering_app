@@ -1,30 +1,4 @@
-document.addEventListener('init', function(event) {
-    var page = event.target;
-
-    if (page.id === 'home') {
-      page.querySelector('#about').onclick = function() {
-            document.querySelector('#myNavigator').pushPage('about.html');
-        };
-
-        page.querySelector('#feet-card').onclick = function() {
-            document.querySelector('#myNavigator').pushPage('feet.html');
-      };
-
-      page.querySelector('#shoulders-card').onclick = function() {
-            document.querySelector('#myNavigator').pushPage('shoulders.html');
-      };
-
-      page.querySelector('#face-card').onclick = function() {
-            document.querySelector('#myNavigator').pushPage('face.html');
-      };
-   }
-});
-
-document.addEventListener('prechange', function(event) {
-document.querySelector('ons-toolbar .center')
-  .innerHTML = event.tabItem.getAttribute('label');
-});
-
+// Code for the template dialog used in the stopwatch.
 var showTemplateDialog = function() {
 var dialog = document.getElementById('my-dialog');
 

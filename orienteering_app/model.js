@@ -1,3 +1,4 @@
+// Iniatlize the local storage and all the different profiles.
 var init = function() {
     var localStorage = window.localStorage;
     if (localStorage.getItem('profiles') === null) {
@@ -7,6 +8,7 @@ var init = function() {
     document.getElementById("cardContainer").addEventListener('load', fillProfiles(), false);
 }
 
+// Create a profile in the localstorage from text inputted.
 var createProfile = function () {
     var name = document.getElementById("createProfileName").value;
     var profile = {
@@ -21,6 +23,7 @@ var createProfile = function () {
     fillProfiles();
 }
 
+// Fill the screen with divs that containst the profiles. Link them with the correct profile in localstorage.
 var fillProfiles = function() {
     var container = document.getElementById("cardContainer");
     while(container.firstChild) {
@@ -61,6 +64,7 @@ var addProfile = function(data) {
     }
 }
 
+// Update the data for a profile. This needs to be done after data is changed for a user.
 var updateProfile = function(data, index) {
     var profiles = [];
     // Parse the serialized data back into an aray of objects
@@ -71,7 +75,7 @@ var updateProfile = function(data, index) {
     localStorage.setItem('profiles', JSON.stringify(profiles));
 }
 
-// Get current profile
+// Get profile att index in the profile localstorage array.
 var getProfile = function(index) {
     var a = []
 
@@ -80,6 +84,7 @@ var getProfile = function(index) {
     return a[index];
 }
 
+// Get current profile
 var getCurrentProfile = function() {
     return JSON.parse(localStorage.getItem('currentProfile'));
 }
@@ -96,5 +101,6 @@ function insertAfter(el, referenceNode) {
     referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
 }
 
+// After code loaded, finally init the model.
 init();
 

@@ -31,6 +31,7 @@ var coursethree = [
 ];
 var centerthree = {lat: 59.324825, lng:18.072103};
 
+// Iniatalize the map on the screen, done every time user switches to that app.
 function initMap() {
 	// Map options
 	profile = getProfile(getCurrentProfile());
@@ -57,6 +58,7 @@ function initMap() {
 		console.log(error)
 	}
 	console.log(profile.currentCourse);
+	// If a course already is active for the current profile initalize that also.
 	if(!(profile.currentCourse === undefined)) {
 		switch (profile.currentCourse) {
 			case 1:
@@ -75,6 +77,7 @@ function initMap() {
 	console.log("init done")
 }
 
+// Remove first course from map.
 function dropCourseone() {
 	map.setCenter(centerone);
 	map.setZoom(14);
@@ -93,6 +96,7 @@ function dropCourseone() {
 	updateProfile(profile, getCurrentProfile());
 }
 
+// Remove second course from map.
 function dropCoursetwo() {
 	map.setCenter(centertwo);
 	map.setZoom(14);
@@ -111,6 +115,7 @@ function dropCoursetwo() {
 	updateProfile(profile, getCurrentProfile());
 }
 
+// Remove third course from map.
 function dropCoursethree() {
 	map.setCenter(centerthree);
 	map.setZoom(14);
@@ -129,6 +134,7 @@ function dropCoursethree() {
 	updateProfile(profile, getCurrentProfile());
 }
 
+// Reset the map after a course is done. Remove control images and append to the course history.
 function resetMap() {
 	profile.events.push([document.getElementById('time').textContent, profile.currentCourse]);
 
@@ -161,6 +167,7 @@ function resetMap() {
 	document.getElementById("chooseCourseContainer").style.display = "Block";
 }
 
+// Restart course.
 function startOver() {
 	for(i = 0; i < profile.events.length; i++) {
 		progress.append(createEvent(profile.events[i][0], profile.events[i][1]));
@@ -171,6 +178,7 @@ function startOver() {
 	document.getElementById("chooseCourseContainer").style.display = "Block";
 }
 
+// Help method to create an event to be put into the localstorage.
 var createEvent = function(inputTime, inputCourse) {
 	var course = document.createElement("div");
 	course.className = "course";
